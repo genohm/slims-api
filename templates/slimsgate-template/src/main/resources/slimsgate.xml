@@ -1,0 +1,14 @@
+<slimsgate>
+	<slimsgate-flow>
+		<id>say-hello</id>
+		<name>Say hello</name>
+		<usage>contentmanagement</usage>
+		<step>
+			<name>Say hello</name>
+			<hidden>true</hidden>
+			<process>
+				<route>sayHello</route>
+			</process>
+		</step>
+	</slimsgate-flow>
+</slimsgate>
