@@ -9,7 +9,7 @@ buildscript {
         }
     }
     dependencies {
-        classpath 'com.genohm:slims-plugin:0.1.0'
+        classpath 'com.genohm:slims-plugin:0.1.2'
     }
 }
 
@@ -23,17 +23,8 @@ subprojects {
             url "$slimsApiArtifactoryRepository"
         }
     }
-    apply plugin: 'idea'
-    apply plugin: 'eclipse'
     if (file('src/main/resources/plugin.properties').exists()) {
         println("Applying slimsplugin to project $it.name")
         apply plugin: 'com.genohm.slimsplugin'
-    }
-    idea {
-        module {
-            if (scopes.COMPILE) {
-                scopes.COMPILE.plus += [configurations.provided]
-            }
-        }
     }
 }
