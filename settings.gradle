@@ -1,0 +1,4 @@
+include 'templates:slimsgate-template'
+include 'templates:slims-vaadin-template'
+include 'templates:library-template'
+include 'templates:dto-template'

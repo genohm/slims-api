@@ -1,0 +1,30 @@
+buildscript {
+    repositories {
+        maven {
+            credentials {
+                username "$slimsApiArtifactoryUser"
+                password "$slimsApiArtifactoryPassword"
+            }
+            url "$slimsApiArtifactoryRepository"
+        }
+    }
+    dependencies {
+        classpath 'com.genohm:slims-plugin:0.1.2'
+    }
+}
+
+subprojects {
+    repositories {
+        maven {
+            credentials {
+                username "$slimsApiArtifactoryUser"
+                password "$slimsApiArtifactoryPassword"
+            }
+            url "$slimsApiArtifactoryRepository"
+        }
+    }
+    if (file('src/main/resources/plugin.properties').exists()) {
+        println("Applying slimsplugin to project $it.name")
+        apply plugin: 'com.genohm.slimsplugin'
+    }
+}

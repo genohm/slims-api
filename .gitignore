@@ -4,6 +4,13 @@
 **/.settings/
 **/bin/
 
+#Intellij
+*.iml
+.idea
+
 #Gradle 
 **/.gradle/
 **/build/*
+
+#macOS
+.DS_Store
