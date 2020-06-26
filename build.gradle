@@ -7,6 +7,8 @@ buildscript {
             }
             url "$slimsApiArtifactoryRepository"
         }
+
+	mavenCentral()
     }
     dependencies {
         classpath 'com.genohm:slims-plugin:0.1.2'
@@ -22,6 +24,8 @@ subprojects {
             }
             url "$slimsApiArtifactoryRepository"
         }
+
+	mavenCentral()
     }
     if (file('src/main/resources/plugin.properties').exists()) {
         println("Applying slimsplugin to project $it.name")
