@@ -4,7 +4,7 @@ The SLIMS API allows you to write SLIMSGATE plugins and SLIMS Vaadin plugins.
 
 ## Prerequisites.
 
-As a prerequisite you will need to have an account on Genohm's build infrastructure. 
+As a prerequisite you will need to have an account on AGILENT build infrastructure. 
 Please contact your SLIMS project lead to get access. 
 They will send you a gradle.properties file looking like this:
 
