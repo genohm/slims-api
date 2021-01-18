@@ -9,9 +9,9 @@ Please contact your SLIMS project lead to get access.
 They will send you a gradle.properties file looking like this:
 
 ```
-slimsApiArtifactoryUser=<your user on genohms artifactory>
-slimsApiArtifactoryPassword=<your password on genohms artifactory>
-slimsApiArtifactoryRepository=<genohms artifact>
+slimsApiArtifactoryUser=<your user on SLIMS API artifactory>
+slimsApiArtifactoryPassword=<your password on SLIMS API artifactory>
+slimsApiArtifactoryRepository=<Artifcatory URL>
 
 
 slimsRestApiUser=<a user on your installed slims>
