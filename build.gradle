@@ -11,7 +11,7 @@ buildscript {
 	mavenCentral()
     }
     dependencies {
-        classpath 'com.genohm:slims-plugin:0.1.2'
+        classpath 'com.genohm:slims-plugin:0.1.4'
     }
 }
 
