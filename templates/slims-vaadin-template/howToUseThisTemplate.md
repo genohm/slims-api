@@ -36,7 +36,10 @@ Change the following [Model-View-Presenter (MVP)](https://en.wikipedia.org/wiki/
 	- (optional) The whole class, for instance different view implementation. Here typically Vaadin UI components are used to draw the view.
 * [SayHelloModel.java](src/main/java/com/genohm/slims/custom/beans/SayHelloModel.java)
 	- (required) Name of the class
-	- (optional) The whole class, for instance different model implementation. Here typically interactions occur with the SLIMS datamodel via for instance `Dao<Content>` and `ContentRecordQueries` API classes.
+	- (optional) The whole class, for instance different model implementation. The model interacts with the data provider and can keep a state of the data.
+* [SayHelloDataProvider.java](src/main/java/com/genohm/slims/custom/beans/SayHelloDataProvider.java)
+	- (required) Name of the class
+	- (optional) The whole class, for instance different data provider implementation. The data provider interacts with the SLIMS datamodel via for instance the `Dao<Content>` and `ContentRecordQueries` API classes.
 
 	
 ## Document your plugin
