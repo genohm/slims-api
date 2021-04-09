@@ -1,3 +1,7 @@
+/*
+ * Copyright 2021 Agilent Technologies Inc.
+ */
+
 package com.genohm.slims.custom.dto;
 
 import java.io.Serializable;

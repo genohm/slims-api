@@ -1,3 +1,7 @@
+/*
+ * Copyright 2021 Agilent Technologies Inc.
+ */
+
 include 'templates:slimsgate-template'
 include 'templates:slims-vaadin-template'
 include 'templates:library-template'
