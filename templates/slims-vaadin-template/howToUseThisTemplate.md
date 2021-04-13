@@ -25,7 +25,12 @@ Change the following default plugin files:
 	- (optional) Name of the class, also change this in `plugin.properties`
 	- (optional) `parameterOne`
 	- (optional) `parameterTwo`
-	
+* [SpringConfig.java](src/main/java/com/genohm/slims/custom/SpringConfig.java)
+	- (required) Update `SayHelloRenderer.class` to the renamed class
+	- (required) Unique `id` in `RendererDefinition.create()`
+	- (optional) Alternative `name`, `description`, `icon`, `usage` and `displayRendererCondition` in `RendererDefinition.create()`
+	- Do not change the name of the class
+
 Change the following [Model-View-Presenter (MVP)](https://en.wikipedia.org/wiki/Model-view-presenter) pattern plugin files:
 * [SayHelloPresenter.java](src/main/java/com/genohm/slims/custom/beans/SayHelloPresenter.java)
 	- (required) Name of the class

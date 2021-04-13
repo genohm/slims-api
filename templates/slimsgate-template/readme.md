@@ -26,6 +26,6 @@ plugin-name: "my-plugin"
 *ERROR messages description and corrective actions*
 
 # Exception handling (optional)
-*Business logic for foreseen exception *
+*Business logic for foreseen exception*
 
 
