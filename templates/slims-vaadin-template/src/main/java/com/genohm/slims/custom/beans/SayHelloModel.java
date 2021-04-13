@@ -17,7 +17,7 @@ public class SayHelloModel {
 	private CustomConfiguration customConfiguration;
 
 	public String getInitialData() {
-		return String.format("Hello from the slims vaadin template plugin, this is my configuration: parameterOne: %s, parameterTwo: %s",
+		return String.format("Hello from the SLIMS Vaadin template plugin, this is my configuration: parameterOne: %s, parameterTwo: %s",
 				customConfiguration.getParameterOne(), customConfiguration.getParameterTwo());
 	}
 
