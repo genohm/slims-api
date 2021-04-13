@@ -19,7 +19,7 @@ public class SayHelloView {
 
 	private Layout leftSide = new VerticalLayout();
 	private Layout rightSide = new VerticalLayout();
-	private Layout layout = new HorizontalLayout(leftSide, rightSide);
+	private HorizontalLayout layout = new HorizontalLayout(leftSide, rightSide);
 	private TextArea textArea = new TextArea();
 
 	private final Button actionButton;
@@ -33,14 +33,15 @@ public class SayHelloView {
 		closeButton = new Button("Close");
 		leftSide.addComponent(closeButton);
 
-		textArea.setRows(30);
+		textArea.setRows(20);
 
 		rightSide.addComponent(new Label("Feedback"));
 		rightSide.addComponent(textArea);
 
+		layout.setExpandRatio(leftSide, 1);
+		layout.setExpandRatio(rightSide, 3);
+
 		layout.setSizeFull();
-		leftSide.setWidth("50%");
-		rightSide.setWidth("50%");
 		textArea.setSizeFull();
 	}
 
