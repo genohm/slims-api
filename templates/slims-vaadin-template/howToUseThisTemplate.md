@@ -3,10 +3,11 @@
 This is an empty SLIMS (Vaadin) plugin. The minimal required files are present.
 
 ## Starting on a new plugin
-Do not change this template but copy the entire folder slims-vaadin-template and give it another plugin name.
+Do not change this template but copy the entire folder slims-vaadin-template and give it another plugin name, for example:
+`slims-vaadin-demo`.
 
 ## Include your new plugin
-Add a line in the file [settings.gradle](../../settings.gradle) to include your new plugin, for example: 
+Add a line in the file [settings.gradle](../../settings.gradle) to include your new plugin, for example:
 ```
 include 'plugin:demo:slims-vaadin-demo'
 ```
@@ -34,7 +35,7 @@ Change the following default plugin files:
 Change the following [Model-View-Presenter (MVP)](https://en.wikipedia.org/wiki/Model-view-presenter) pattern plugin files:
 * [SayHelloPresenter.java](src/main/java/com/genohm/slims/custom/beans/SayHelloPresenter.java)
 	- (required) Name of the class
-	- (optional) The method `postConstruct()`, for instance different interactions in between view and model. 
+	- (optional) The method `postConstruct()`, for instance different interactions in between view and model.
 	  This can be an interaction driven by a user event in the view or by a state change in the model.
 * [SayHelloView.java](src/main/java/com/genohm/slims/custom/beans/SayHelloView.java)
 	- (required) Name of the class
@@ -46,12 +47,12 @@ Change the following [Model-View-Presenter (MVP)](https://en.wikipedia.org/wiki/
 	- (required) Name of the class
 	- (optional) The whole class, for instance different data provider implementation. The data provider interacts with the SLIMS datamodel via for instance the `Dao<Content>` and `ContentRecordQueries` API classes.
 
-	
+
 ## Document your plugin
 * Fill in the [readme.md](readme.md) file
 
 ## Build your plugin
-* Execute the fatjar command in the plugin root folder, for example:
+* Execute the fatjar command in the repository root folder, for example:
 ```
 ./gradlew plugin:demo:slims-vaadin-demo:fatjar
 ```
