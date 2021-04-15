@@ -17,7 +17,11 @@ public class SpringConfig {
 	public RendererRegistration sayHelloRendererRegistration() {
 		return RendererRegistration.create(
 				RendererDefinition.create("slims-vaadin-template-example",
-						"SayHello", "SayHello", "icons/add_data.png", SlimsgateFlowUsage.CONTENT_MANAGEMENT, null),
+						"SayHello",
+						"SayHello",
+						"icons/add_data.png",
+						SlimsgateFlowUsage.CONTENT_MANAGEMENT,
+						null),
 				SayHelloRenderer.class);
 	}
 
