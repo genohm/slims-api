@@ -1,3 +1,7 @@
+/*
+ * Copyright 2021 Agilent Technologies Inc.
+ */
+
 package com.genohm.slims.custom;
 
 public class CustomConfiguration {
