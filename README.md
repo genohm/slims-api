@@ -4,26 +4,28 @@ The SLIMS API allows you to write SLIMSGATE plugins and SLIMS Vaadin plugins.
 
 ## Prerequisites.
 
-As a prerequisite you will need to have an account on AGILENT's build infrastructure. 
+- Java 11
+
+- You will need to have an account on AGILENT's build infrastructure. 
 Please contact your SLIMS project lead to get access. 
 They will send you a gradle.properties file looking like this:
 
-```
-slimsApiArtifactoryUser=<your user on SLIMS API artifactory>
-slimsApiArtifactoryPassword=<your password on SLIMS API artifactory>
-slimsApiArtifactoryRepository=<Artifcatory URL>
-
-
-slimsRestApiUser=<a user on your installed slims>
-slimsRestApiPassword=<the password for that user>
-slimsRestApiEndpoint=<the url to the installed slimsrest>
-```
-
-You will need to place this file in 
-
-```
-~/.gradle/gradle.properties
-```
+    ```
+    slimsApiArtifactoryUser=<your user on SLIMS API artifactory>
+    slimsApiArtifactoryPassword=<your password on SLIMS API artifactory>
+    slimsApiArtifactoryRepository=<Artifcatory URL>
+    
+    
+    slimsRestApiUser=<a user on your installed slims>
+    slimsRestApiPassword=<the password for that user>
+    slimsRestApiEndpoint=<the url to the installed slimsrest>
+    ```
+    
+    You will need to place this file in 
+    
+    ```
+    ~/.gradle/gradle.properties
+    ```
 
 ## Using gradle
 
@@ -31,6 +33,7 @@ You will need to place this file in
 
 Once your account is setup, download this repository and navigate to the base folder of the repository with the command line interface you use. 
 We suggest using GIT Bash for Windows. 
+Make sure your JAVA_HOME is set to java 11.
 Build the projects for your favorite IDE (Eclipse or IntelliJ) with:
 
 ```
