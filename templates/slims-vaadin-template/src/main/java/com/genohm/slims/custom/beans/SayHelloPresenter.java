@@ -6,7 +6,7 @@ package com.genohm.slims.custom.beans;
 
 import javax.annotation.PostConstruct;
 
-import org.apache.log4j.Logger;
+import org.slf4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.genohm.slims.custom.api.SlimsLogger;
