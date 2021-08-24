@@ -3,7 +3,7 @@
 name: gradle build and test
 
 # Controls when the workflow will run
-on: [push, pull_request]
+on: [pull_request]
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -11,6 +11,9 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
+
+    env:
+      GRADLE_ARGUMENTS: -PslimsApiArtifactoryUser=${{ secrets.SLIMS_API_NEXUS_USERNAME }} -PslimsApiArtifactoryPassword=${{ secrets.SLIMS_API_NEXUS_PASSWORD }} -PslimsApiArtifactoryRepository=https://maven.slims.agilent.com/nexus/content/repositories/releases/
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -26,6 +29,6 @@ jobs:
       - name: Grant execute permission for gradlew
         run: chmod +x gradlew
       - name: Build with Gradle
-        run: ./gradlew build
+        run: ./gradlew build ${{ env.GRADLE_ARGUMENTS }}
       - name: Build with Gradle
-        run: ./gradlew test
+        run: ./gradlew test ${{ env.GRADLE_ARGUMENTS }}
