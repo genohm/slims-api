@@ -19,6 +19,10 @@ buildscript {
     }
 }
 
+plugins {
+    id('idea')
+}
+
 subprojects {
     repositories {
         maven {
