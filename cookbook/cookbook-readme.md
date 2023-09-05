@@ -68,7 +68,7 @@ Under the [cookbook/plugins](plugins) folder you will find several sub-folders, 
      * Creating >1 slimsgate flows based on the plugin's configuration
      * Conditionally adding/removing XML elements based on inputs or configuration
        * For example, conditionally hiding a step, conditionally excluding certain fields
-4. [ui-only-actions-as-code](plugins/ui-only-actions-as-code)
+5. [ui-only-actions-as-code](plugins/ui-only-actions-as-code)
    * Examples of how you can utilize services from `PublicApi` to perform actions available in the UI that do more than just
         a simple CRUD action on the Database
    * Versioning records

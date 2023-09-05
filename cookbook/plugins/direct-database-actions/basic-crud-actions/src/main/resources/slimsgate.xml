@@ -1,0 +1,21 @@
+<!--
+  ~ Copyright 2021 Agilent Technologies Inc.
+  -->
+
+<!-- This flow will add a button called "create a content" to the Contents module -->
+<!-- Clicking the button will immediately start the route in BasicCrudActionsBuilder with the ID "create-a-content"
+		It is immediate because the only step in this flow is hidden - so there is no UI element -->
+<slimsgate>
+	<slimsgate-flow>
+		<id>create-a-content</id> <!-- unique identifier -->
+		<name>Create a Content</name> <!-- button label -->
+		<usage>contentmanagement</usage> <!-- appears in the content module -->
+		<step> <!-- step that starts the flow; hidden -->
+			<name>create-a-content</name> <!-- unique identifier -->
+			<hidden>true</hidden> <!-- means there is no pop to the user for this step -->
+			<process>
+				<route>create-a-content</route> <!-- The route to start -->
+			</process>
+		</step>
+	</slimsgate-flow>
+</slimsgate>
