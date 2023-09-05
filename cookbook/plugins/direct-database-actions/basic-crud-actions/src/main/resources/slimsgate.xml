@@ -11,8 +11,8 @@
 		<name>Create a Content</name> <!-- button label -->
 		<usage>contentmanagement</usage> <!-- appears in the content module -->
 		<step> <!-- step that starts the flow; hidden -->
-			<name>create-a-content</name> <!-- unique identifier -->
-			<hidden>true</hidden> <!-- means there is no pop to the user for this step -->
+			<name>create-a-content</name> <!-- name of the step -->
+			<hidden>true</hidden> <!-- means there is no popup to the user for this step when the flow's button is clicked -->
 			<process>
 				<route>create-a-content</route> <!-- The route to start -->
 			</process>
