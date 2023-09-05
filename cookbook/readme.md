@@ -1,7 +1,7 @@
 # How to use this cookbook
 
 **This section assumes you have already followed the instructions in the [top-level readme](../README.md) to setup your gradle.properties
-and run the `./gradlew idea` command successfully**
+and run the `./gradlew idea` or `./gradlew eclipse` command successfully**
 
 **For extremely basic examples that can be used as jumping off points for new plugins, please see [templates](../templates)
 and the [top-level readme](../README.md) in this repo**
@@ -17,7 +17,7 @@ In particular, we want to highlight how you can utilize the services provided in
 in your External Libraries in a directory like `/slimsservice-api-A.B.C/com/genohm/slims/server/service/PublicApi.class`. 
 
 The `A` `B` and `C` in `slimsservice-api-A.B.C` will be a number like `6.9.0`. You might have more than one of these folders:
-one is created for each version of SLIMS you have amongst your plugins' `apiVersion` values. For example, if you run `./gradlew idea`
+one is created for each version of SLIMS you have amongst your plugins' `apiVersion` values. For example, if you run `./gradlew idea` or `./gradlew eclipse`
 after creating a plugin that has the following `plugin.properties` file:
 
 ```
