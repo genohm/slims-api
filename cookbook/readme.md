@@ -10,6 +10,9 @@ This cookbook is intended to provide you with a series of example plugins and co
 utilizing the slimsgate api. It is not intended to replace the slims development manual, [Apache's camel documentation](https://camel.apache.org/components/4.0.x), 
 or [Thymeleaf's documentation](https://www.thymeleaf.org/doc/tutorials/3.1/usingthymeleaf.html). Rather, this is a 
 supplementary set of salient examples to demonstrate how these tools can join together and interact when creating your own Slimsgate plugins.
+
+## SLIMSGate API Services
+
 In particular, we want to highlight how you can utilize the services provided in the `PublicApi` class. This class can be found
 in your External Libraries in a directory like `/slimsservice-api-A.B.C/com/genohm/slims/server/service/PublicApi.class`. 
 
