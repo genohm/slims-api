@@ -2,10 +2,10 @@
   ~ Copyright 2021 Agilent Technologies Inc.
   -->
 
-<!-- This flow will add a button called "create a content" to the Contents module -->
-<!-- Clicking the button will immediately start the route in BasicCrudActionsBuilder with the ID "create-a-content"
-		It is immediate because the only step in this flow is hidden - so there is no UI element -->
 <slimsgate>
+	<!-- This flow will add a button called "create a content" to the Contents module -->
+	<!-- Clicking the button will immediately start the route in BasicCrudActionsBuilder with the ID "create-a-content"
+			It is immediate because the only step in this flow is hidden - so there is no UI element -->
 	<slimsgate-flow>
 		<id>create-a-content</id> <!-- unique identifier -->
 		<name>Create a Content</name> <!-- button label -->
@@ -15,6 +15,48 @@
 			<hidden>true</hidden> <!-- means there is no popup to the user for this step when the flow's button is clicked -->
 			<process>
 				<route>create-a-content</route> <!-- The route to start -->
+			</process>
+		</step>
+	</slimsgate-flow>
+
+
+	<!-- This flow will add a button called "Fetch some Content" to the Contents module -->
+	<!-- Clicking the button will immediately start the route in BasicCrudActionsBuilder with the ID "fetch-some-content"
+			It is immediate because the only step in this flow is hidden - so there is no UI element. -->
+	<slimsgate-flow>
+		<id>fetch-some-content</id> <!-- unique identifier -->
+		<name>Fetch some Content</name> <!-- button label -->
+		<usage>contentmanagement</usage> <!-- appears in the content module -->
+		<step> <!-- step that starts the flow; hidden -->
+			<name>fetch-some-content</name> <!-- name of the step -->
+			<hidden>true</hidden> <!-- means there is no popup to the user for this step when the flow's button is clicked -->
+			<process>
+				<route>fetch-some-content</route> <!-- The route to start -->
+			</process>
+			<output>
+				<parameter>
+					<name>contentInfo</name>
+					<type>ValueMap</type>
+					<persistent>true</persistent> <!-- This means it can be accessed in any following step; not just the next one -->
+				</parameter>
+			</output>
+		</step>
+		<step> <!-- Step that displays some feedback to the user. This step will start when the previous step's route has finished executing -->
+			<id>display-some-values</id>
+			<name>Display some values</name>
+			<hidden>false</hidden> <!-- Display the step -->
+			<input> <!-- parameter elements get wrapped in an input element -->
+				<parameter> <!-- Parameters in the step display as fields -->
+					<label>Information</label>
+					<name>outputMessage</name> <!-- The name of the field will need to correspond to a Key in the contentInfo map. The value in the key "outputMessage" will be the feedback string that is shown -->
+					<type>Feedback</type> <!-- This will be a read-only field, whose default value will come from a value passed by a previous step -->
+					<width>1000</width>
+					<referencedDefaultValue><![CDATA[contentInfo]]></referencedDefaultValue> <!-- If the value contains HTML, it has to be wrapped in <![CDATA[]]> -->
+				</parameter>
+
+			</input>
+			<process>
+				<route>do-nothing</route> <!-- All steps must have a route, but this step is just to display information; so the route will not do anything -->
 			</process>
 		</step>
 	</slimsgate-flow>

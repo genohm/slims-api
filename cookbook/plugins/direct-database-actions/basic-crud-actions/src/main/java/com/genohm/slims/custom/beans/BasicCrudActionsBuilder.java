@@ -5,7 +5,6 @@
 package com.genohm.slims.custom.beans;
 
 import org.apache.camel.builder.RouteBuilder;
-import org.checkerframework.checker.units.qual.A;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -15,7 +14,9 @@ public class BasicCrudActionsBuilder extends RouteBuilder {
 	@Autowired
 	private CreateAContent createAContent;
 
-	// TODO Route to fetch all contents with the configured type and log their barcodes
+	@Autowired
+	private FetchSomeContent fetchSomeContent;
+
 	// TODO Route to update a content with the configured type to a new type
 	// TODO Route to remove all contents of the configured type
 
@@ -27,7 +28,16 @@ public class BasicCrudActionsBuilder extends RouteBuilder {
 				.routeId("create-a-content");
 
 
-		//
+		// This route will execute the @Handler-annotated method in the fetchSomeContent class
+		from("direct:fetch-some-content")
+				.bean(fetchSomeContent)
+				.routeId("fetch-some-content");
+
+		// This route doesn't have any beans - so it won't actually do anything
+		// Can be used for "feedback" steps that don't need to od any logic
+		from("direct:do-nothing")
+				.log("Doing nothing")
+				.routeId("do-nothing");
 	}
 
 }

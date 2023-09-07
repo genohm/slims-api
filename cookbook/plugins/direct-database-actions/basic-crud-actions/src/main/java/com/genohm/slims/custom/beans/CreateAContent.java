@@ -51,13 +51,16 @@ public class CreateAContent {
 		// Add the configured content type display value to the map at the Content Type key
 			// The value should be what would appear on the content in the Content Type field when you've selected the type you want
 		contentToCreate.put(ContentMeta.FK_CONTENT_TYPE, basicCrudActionsConfiguration.getContentTypeDisplayValue());
+		// Do the same for the default required Status field on Content
+		contentToCreate.put(ContentMeta.FK_STATUS, basicCrudActionsConfiguration.getStatusDisplayValue());
 
 		// Use convertRecordsService to convert the keys in our map to the correct datatype for import into SLIMS
 			// See ConvertRecordService javadoc for thorough explanation of how it works and how it expects data to be formatted
-		convertRecordService.convertToInternalFormat(contentToCreate, DaoConstants.CONTENT);
+		// Use DaoConstants to get the name of the Database Table for a given type of record
+		Map<String, Object> convertedContent = convertRecordService.convertToInternalFormat(contentToCreate, DaoConstants.CONTENT);
 
 		// Create the content in SLIMS
-		contentDao.add(contentToCreate);
+		contentDao.add(convertedContent);
 	}
 	
 }
