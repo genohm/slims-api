@@ -48,7 +48,7 @@
 			<input> <!-- parameter elements get wrapped in an input element -->
 				<parameter> <!-- Parameters in the step display as fields -->
 					<label>Information</label>
-					<name>outputMessage</name> <!-- The name of the field will need to correspond to a Key in the contentInfo map. The value in the key "outputMessage" will be the feedback string that is shown -->
+					<name>outputMessage</name> <!-- The name of the field will need to correspond to a Key in the contentInfo map output by the previous step. The value in the key "outputMessage" will be the feedback string that is shown -->
 					<type>Feedback</type> <!-- This will be a read-only field, whose default value will come from a value passed by a previous step -->
 					<width>1000</width>
 					<referencedDefaultValue><![CDATA[contentInfo]]></referencedDefaultValue> <!-- If the value contains HTML, it has to be wrapped in <![CDATA[]]> -->

@@ -114,7 +114,7 @@ public class FetchSomeContent {
 
 
 		// Create a return map with an HTML message containing the contents' barcodes to display to the user in the Feedback step
-			// We store it in a key called "Information" - to match the feedback step's configuration in slimsgate.xml
+			// We store it in a key called "outputMessage" - to match the feedback step's configuration in slimsgate.xml
 		Map<String, Object> returnMap = new HashMap<>();
 		StringBuilder feedbackHtml = new StringBuilder(String.format("<p>Found %s contents with content type %s: <ul>", foundContentsBarcodes.size(), basicCrudActionsConfiguration.getContentTypeDisplayValue()));
 		foundContentsBarcodes.forEach(barcode -> feedbackHtml.append(String.format("<li>%s</li>", barcode)));
