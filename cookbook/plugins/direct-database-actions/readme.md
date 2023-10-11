@@ -12,7 +12,7 @@
 * Fetching Maps<> that include custom fields
   * [ContentRecordQueries](basic-crud-actions/src/main/java/com/genohm/slims/custom/beans/FetchSomeContent.java#L87) 
   * [ContentTypeRecordQueries](basic-crud-actions/src/main/java/com/genohm/slims/custom/beans/FetchSomeContent.java#L82)
-* Fetching custom Class objects withotu custom fields
+* Fetching custom Class objects without custom fields
   * [ContentQueries](basic-crud-actions/src/main/java/com/genohm/slims/custom/beans/FetchSomeContent.java#L107) 
   * [ContentTypeQueries](basic-crud-actions/src/main/java/com/genohm/slims/custom/beans/FetchSomeContent.java#L103)
 * Using Meta classes for default field names 
