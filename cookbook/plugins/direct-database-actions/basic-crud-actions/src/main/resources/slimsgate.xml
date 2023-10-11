@@ -70,7 +70,7 @@
 		<id>delete-some-content</id> <!-- unique identifier -->
 		<name>Delete some Content</name> <!-- button label -->
 		<usage>contentmanagement</usage> <!-- appears in the content module -->
-		<step> <!-- step that starts the flow; hidden -->
+		<step> <!-- step that starts the flow -->
 			<name>delete-some-content</name> <!-- name of the step -->
 			<hidden>false</hidden> <!-- means there is a popup to the user for this step when the flow's button is clicked -->
 			<input> <!-- parameter elements get wrapped in an input element -->
@@ -107,6 +107,33 @@
 			</input>
 			<process>
 				<route>do-nothing</route> <!-- All steps must have a route, but this step is just to display information; so the route will not do anything -->
+			</process>
+		</step>
+	</slimsgate-flow>
+
+
+	<!-- This flow will add a button called "Update checked Content status" to the Contents module -->
+		<!-- immediately start the route in BasicCrudActionsBuilder with the ID "update-some-content"
+			It is immediate because the only step in this flow is hidden - so there is no UI element.  -->
+		<!-- This flow will require that you check off some Content before you start the flow due to its SLIMS_SELECT_SAMPLE
+			parameter. See the development manual for more information on this parameter -->
+	<slimsgate-flow>
+		<id>update-some-content</id> <!-- unique identifier -->
+		<name>Update checked Content status</name> <!-- button label -->
+		<usage>contentmanagement</usage> <!-- appears in the content module -->
+		<step> <!-- step that starts the flow; hidden -->
+			<name>update-some-content</name> <!-- name of the step -->
+			<hidden>true</hidden>
+			<input> <!-- parameter elements get wrapped in an input element -->
+				<parameter>
+					<label>SLIMS_SELECT_SAMPLES</label>
+					<name>SLIMS_SELECT_SAMPLES</name> <!-- SLIMS internal parameter to specify that sample selection is needed for this flow -->
+					<type>StringArray</type>
+					<required>true</required>
+				</parameter>
+			</input>
+			<process>
+				<route>update-some-content</route> <!-- The route to start -->
 			</process>
 		</step>
 	</slimsgate-flow>

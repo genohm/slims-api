@@ -11,6 +11,7 @@ public class BasicCrudActionsConfiguration {
 	private String statusDisplayValue;
 	private String deletionSortField;
 	private boolean deletionSortDescending;
+	private String updateStatusDisplayValue;
 
 	public BasicCrudActionsConfiguration() {
 
@@ -23,6 +24,7 @@ public class BasicCrudActionsConfiguration {
 	public String getStatusDisplayValue() { return statusDisplayValue; }
 	public String getDeletionSortField() { return deletionSortField; }
 	public boolean getDeletionSortDescending() { return deletionSortDescending; }
+	public String getUpdateStatusDisplayValue() { return updateStatusDisplayValue; }
 
 	public static BasicCrudActionsConfiguration getDefault() {
 		BasicCrudActionsConfiguration customConfiguration = new BasicCrudActionsConfiguration();
@@ -31,6 +33,7 @@ public class BasicCrudActionsConfiguration {
 		customConfiguration.fetchRecordAsMaps = false;
 		customConfiguration.deletionSortField = "cntn_createdOn";
 		customConfiguration.deletionSortDescending = false;
+		customConfiguration.updateStatusDisplayValue = "Removed";
 		return customConfiguration;
 	}
 
