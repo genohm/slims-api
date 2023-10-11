@@ -9,6 +9,8 @@ public class BasicCrudActionsConfiguration {
 	private String contentTypeDisplayValue;
 	private boolean fetchRecordAsMaps;
 	private String statusDisplayValue;
+	private String deletionSortField;
+	private boolean deletionSortDescending;
 
 	public BasicCrudActionsConfiguration() {
 
@@ -19,12 +21,16 @@ public class BasicCrudActionsConfiguration {
 	}
 	public boolean getFetchRecordAsMaps() { return fetchRecordAsMaps; }
 	public String getStatusDisplayValue() { return statusDisplayValue; }
+	public String getDeletionSortField() { return deletionSortField; }
+	public boolean getDeletionSortDescending() { return deletionSortDescending; }
 
 	public static BasicCrudActionsConfiguration getDefault() {
 		BasicCrudActionsConfiguration customConfiguration = new BasicCrudActionsConfiguration();
 		customConfiguration.contentTypeDisplayValue = "Example Type";
 		customConfiguration.statusDisplayValue = "Pending";
 		customConfiguration.fetchRecordAsMaps = false;
+		customConfiguration.deletionSortField = "cntn_createdOn";
+		customConfiguration.deletionSortDescending = false;
 		return customConfiguration;
 	}
 

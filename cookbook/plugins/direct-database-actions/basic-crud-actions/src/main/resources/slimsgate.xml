@@ -60,4 +60,54 @@
 			</process>
 		</step>
 	</slimsgate-flow>
+
+
+	<!-- This flow will add a button called "Delete some Content" to the Contents module -->
+	<!-- Clicking the button will open a popup window with a form asking how many content should be deleted. When you
+			click the "finish" button on the popup, it will start the route in BasicCrudActionsBuilder with the ID
+			"delete-some-content" -->
+	<slimsgate-flow>
+		<id>delete-some-content</id> <!-- unique identifier -->
+		<name>Delete some Content</name> <!-- button label -->
+		<usage>contentmanagement</usage> <!-- appears in the content module -->
+		<step> <!-- step that starts the flow; hidden -->
+			<name>delete-some-content</name> <!-- name of the step -->
+			<hidden>false</hidden> <!-- means there is a popup to the user for this step when the flow's button is clicked -->
+			<input> <!-- parameter elements get wrapped in an input element -->
+				<parameter> <!-- Parameters in the step display as fields -->
+					<label>How many content to delete?</label>
+					<name>numToDelete</name> <!-- The name of the field is the unique identifier and will be used to reference the input value during in the Bean called by the step's route -->
+					<type>Integer</type> <!-- This will be a field that only accepts an Integer number -->
+					<required>true</required> <!-- If the field is empty, you won't be able to finish the step -->
+				</parameter>
+			</input>
+			<process>
+				<route>delete-some-content</route> <!-- The route to start -->
+			</process>
+			<output>
+				<parameter>
+					<name>contentInfo</name>
+					<type>ValueMap</type>
+					<persistent>true</persistent> <!-- This means it can be accessed in any following step; not just the next one -->
+				</parameter>
+			</output>
+		</step>
+		<step> <!-- Step that displays some feedback to the user. This step will start when the previous step's route has finished executing -->
+			<id>display-some-values</id>
+			<name>Display some values</name>
+			<hidden>false</hidden> <!-- Display the step -->
+			<input> <!-- parameter elements get wrapped in an input element -->
+				<parameter> <!-- Parameters in the step display as fields -->
+					<label>Information</label>
+					<name>outputMessage</name> <!-- The name of the field will need to correspond to a Key in the contentInfo map output by the previous step. The value in the key "outputMessage" will be the feedback string that is shown -->
+					<type>Feedback</type> <!-- This will be a read-only field, whose default value will come from a value passed by a previous step -->
+					<width>1000</width>
+					<referencedDefaultValue><![CDATA[contentInfo]]></referencedDefaultValue> <!-- If the value contains HTML, it has to be wrapped in <![CDATA[]]> -->
+				</parameter>
+			</input>
+			<process>
+				<route>do-nothing</route> <!-- All steps must have a route, but this step is just to display information; so the route will not do anything -->
+			</process>
+		</step>
+	</slimsgate-flow>
 </slimsgate>

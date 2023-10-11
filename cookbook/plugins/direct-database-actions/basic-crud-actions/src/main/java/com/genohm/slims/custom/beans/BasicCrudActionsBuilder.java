@@ -17,8 +17,11 @@ public class BasicCrudActionsBuilder extends RouteBuilder {
 	@Autowired
 	private FetchSomeContent fetchSomeContent;
 
+	@Autowired
+	private DeleteSomeContent deleteSomeContent;
+
 	// TODO Route to update a content with the configured type to a new type
-	// TODO Route to remove all contents of the configured type
+	// TODO Route to remove some number of contents of the configured type
 
 	@Override
 	public void configure() throws Exception {
@@ -33,8 +36,15 @@ public class BasicCrudActionsBuilder extends RouteBuilder {
 				.bean(fetchSomeContent)
 				.routeId("fetch-some-content");
 
+
+		// This route will execute the @Handler-annotated method in the deleteSomeContent class
+		from("direct:delete-some-content")
+				.bean(deleteSomeContent)
+				.routeId("delete-some-content");
+
+
 		// This route doesn't have any beans - so it won't actually do anything
-		// Can be used for "feedback" steps that don't need to od any logic
+		// Can be used for "feedback" steps that don't need to do any logic
 		from("direct:do-nothing")
 				.log("Doing nothing")
 				.routeId("do-nothing");
