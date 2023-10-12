@@ -39,7 +39,7 @@ Under the [cookbook/plugins](plugins) folder you will find several sub-folders, 
 
 <summary>
 
-[common-camel-patterns](plugins/common-camel-patterns)
+#### [common-camel-patterns](plugins/common-camel-patterns)
 
 </summary>
 
@@ -63,7 +63,7 @@ Under the [cookbook/plugins](plugins) folder you will find several sub-folders, 
 
 <summary>
 
-[direct-database-actions](plugins/direct-database-actions)
+#### [direct-database-actions](plugins/direct-database-actions)
 
 </summary>
 
@@ -85,7 +85,7 @@ Under the [cookbook/plugins](plugins) folder you will find several sub-folders, 
 
 <summary>
 
-[notifications-and-emails](plugins/notifications-and-emails)
+#### [notifications-and-emails](plugins/notifications-and-emails)
  
 </summary>
 
@@ -98,7 +98,7 @@ Under the [cookbook/plugins](plugins) folder you will find several sub-folders, 
 
 <summary>
 
-[slimsgate-xml-advanced-patterns](plugins/slimsgate-xml-advanced-patterns)
+#### [slimsgate-xml-advanced-patterns](plugins/slimsgate-xml-advanced-patterns)
 
 </summary>
 
@@ -113,7 +113,7 @@ Under the [cookbook/plugins](plugins) folder you will find several sub-folders, 
 
 <summary>
 
-[ui-only-actions-as-code](plugins/ui-only-actions-as-code)
+#### [ui-only-actions-as-code](plugins/ui-only-actions-as-code)
 
 </summary>
 
