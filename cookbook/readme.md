@@ -36,6 +36,7 @@ external library: `slimsservice-api-6.9.1.jar`.
 Under the [cookbook/plugins](plugins) folder you will find several sub-folders, broken into categories:
 
 <details>
+
 <summary>
 
 1. [common-camel-patterns](plugins/common-camel-patterns)
@@ -59,13 +60,14 @@ Under the [cookbook/plugins](plugins) folder you will find several sub-folders, 
 </details>
 
 <details>
+
 <summary>
 
 2. [direct-database-actions](plugins/direct-database-actions)
 
 </summary>
 
-    * Examples for both simple and "special" direct interactions with the SLIMS database
+   * Examples for both simple and "special" direct interactions with the SLIMS database
    * Concepts explored:
      * CRUD actions - creating, reading, updating, and deleting records
      * Use of `@Transactional`
@@ -80,40 +82,42 @@ Under the [cookbook/plugins](plugins) folder you will find several sub-folders, 
 </details>
 
 <details>
+
 <summary>
 
 3. [notifications-and-emails](plugins/notifications-and-emails)
  
 </summary>
 
-    * Examples of services that can be used to send SLIMS notifications or Emails from SLIMS Email Templates
+   * Examples of services that can be used to send SLIMS notifications or Emails from SLIMS Email Templates
 
 
 </details>
 
 <details>
+
 <summary>
 
 4. [slimsgate-xml-advanced-patterns](plugins/slimsgate-xml-advanced-patterns)
 
 </summary>
 
-    * Examples of common ways to use [Thymeleaf](https://www.thymeleaf.org/doc/tutorials/3.1/usingthymeleaf.html) in slimsgate.xml files
-     * Creating >1 slimsgate flows based on the plugin's configuration
-     * Conditionally adding/removing XML elements based on inputs or configuration
-       * For example, conditionally hiding a step, conditionally excluding certain fields
+   * Examples of common ways to use [Thymeleaf](https://www.thymeleaf.org/doc/tutorials/3.1/usingthymeleaf.html) in slimsgate.xml files
+   * Creating >1 slimsgate flows based on the plugin's configuration
+   * Conditionally adding/removing XML elements based on inputs or configuration
+     * For example, conditionally hiding a step, conditionally excluding certain fields
 
 </details>
 
 <details>
+
 <summary>
 
 5. [ui-only-actions-as-code](plugins/ui-only-actions-as-code)
 
 </summary>
 
-    * Examples of how you can utilize services from `PublicApi` to perform actions available in the UI that do more than just
-        a simple CRUD action on the Database
+   * Examples of how you can utilize services from `PublicApi` to perform actions available in the UI that do more than just a simple CRUD action on the Database
    * Versioning records
    * Enrolling contents in biobanking Studies
    * Blocking positions in locations
