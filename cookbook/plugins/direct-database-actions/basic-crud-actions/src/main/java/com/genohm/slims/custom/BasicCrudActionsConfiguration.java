@@ -7,7 +7,7 @@ package com.genohm.slims.custom;
 public class BasicCrudActionsConfiguration {
 
 	private String contentTypeDisplayValue;
-	private boolean fetchRecordAsMaps;
+	private boolean fetchRecordsAsMaps;
 	private String statusDisplayValue;
 	private String deletionSortField;
 	private boolean deletionSortDescending;
@@ -20,7 +20,7 @@ public class BasicCrudActionsConfiguration {
 	public String getContentTypeDisplayValue() {
 		return contentTypeDisplayValue;
 	}
-	public boolean getFetchRecordAsMaps() { return fetchRecordAsMaps; }
+	public boolean getFetchRecordsAsMaps() { return fetchRecordsAsMaps; }
 	public String getStatusDisplayValue() { return statusDisplayValue; }
 	public String getDeletionSortField() { return deletionSortField; }
 	public boolean getDeletionSortDescending() { return deletionSortDescending; }
@@ -30,7 +30,7 @@ public class BasicCrudActionsConfiguration {
 		BasicCrudActionsConfiguration customConfiguration = new BasicCrudActionsConfiguration();
 		customConfiguration.contentTypeDisplayValue = "Example Type";
 		customConfiguration.statusDisplayValue = "Pending";
-		customConfiguration.fetchRecordAsMaps = false;
+		customConfiguration.fetchRecordsAsMaps = false;
 		customConfiguration.deletionSortField = "cntn_createdOn";
 		customConfiguration.deletionSortDescending = false;
 		customConfiguration.updateStatusDisplayValue = "Removed";

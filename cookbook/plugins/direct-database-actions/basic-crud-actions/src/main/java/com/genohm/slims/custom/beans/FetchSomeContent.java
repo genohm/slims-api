@@ -67,7 +67,7 @@ public class FetchSomeContent {
 			// XyzRecordQueries return the records as Map<String, Objects> instead of custom classes like Content, ContentType, etc.
 			// The keys in records fetched as Maps<> will be SLIMS field names, and the values will be the value that record has in that field
 			// It is easier to work with the Custom classes, but if you need values from Custom Fields, the custom classes don't have getters for those fields - you have to fetch the records as Maps<>
-		if(basicCrudActionsConfiguration.getFetchRecordAsMaps()) {
+		if(basicCrudActionsConfiguration.getFetchRecordsAsMaps()) {
 			try {
 				// This criteria can be defined inline on the actual fetch as well
 				SlimsCriterion contentTypeFetchCriteria = SlimsRestrictions.and(

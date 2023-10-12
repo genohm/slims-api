@@ -18,7 +18,7 @@
 
 * [Create a content](basic-crud-actions/src/main/resources/slimsgate.xml#L9)
 * [Fetch some content](basic-crud-actions/src/main/resources/slimsgate.xml#L26)
-* [Delete a content](basic-crud-actions/src/main/resources/slimsgate.xml#L69)
+* [Delete some content](basic-crud-actions/src/main/resources/slimsgate.xml#L69)
 * [Update some content](basic-crud-actions/src/main/resources/slimsgate.xml#L120)
 
 </details>
