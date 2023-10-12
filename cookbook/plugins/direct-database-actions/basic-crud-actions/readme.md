@@ -1,7 +1,3 @@
-// TODO Mention ConvertRecordService for datatype conversions and FK lookups
-    // Note what it won't do well
-
-
 ---
 plugin-name: "basic-crud-actions"
 ---
