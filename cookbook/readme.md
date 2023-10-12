@@ -35,7 +35,13 @@ external library: `slimsservice-api-6.9.1.jar`.
 
 Under the [cookbook/plugins](plugins) folder you will find several sub-folders, broken into categories:
 
+<details>
+<summary>
+
 1. [common-camel-patterns](plugins/common-camel-patterns)
+
+</summary>
+
    * Examples to illustrate commonly-utilized camel route designs and camel route endpoints other than "direct" routes that run some beans
    * Concepts explored:
      * [Netty](https://camel.apache.org/components/4.0.x/netty-component.html) (TCP connection plumbing, handled by camel)
@@ -48,9 +54,18 @@ Under the [cookbook/plugins](plugins) folder you will find several sub-folders, 
        * Started from a button being clicked in SLIMS
        * Started from a Rule in SLIMS
        * Started from a SLIMSRest API call
-       * Not started from an action in SLIMS, SLIMSRest, or another route using `SlimsGateFlowService`
+       * Not started from an action in SLIMS, SLIMSRest, or another route using `SlimsGateFlowService` 
+
+</details>
+
+<details>
+<summary>
+
 2. [direct-database-actions](plugins/direct-database-actions)
-   * Examples for both simple and "special" direct interactions with the SLIMS database
+
+</summary>
+
+    * Examples for both simple and "special" direct interactions with the SLIMS database
    * Concepts explored:
      * CRUD actions - creating, reading, updating, and deleting records
      * Use of `@Transactional`
@@ -61,15 +76,43 @@ Under the [cookbook/plugins](plugins) folder you will find several sub-folders, 
        * Flags
        * Providing your own `cntn_barcode`
        * Getting meta-information about Fields themselves
+
+</details>
+
+<details>
+<summary>
+
 3. [notifications-and-emails](plugins/notifications-and-emails)
-   * Examples of services that can be used to send SLIMS notifications or Emails from SLIMS Email Templates
+ 
+</summary>
+
+    * Examples of services that can be used to send SLIMS notifications or Emails from SLIMS Email Templates
+
+
+</details>
+
+<details>
+<summary>
+
 4. [slimsgate-xml-advanced-patterns](plugins/slimsgate-xml-advanced-patterns)
-   * Examples of common ways to use [Thymeleaf](https://www.thymeleaf.org/doc/tutorials/3.1/usingthymeleaf.html) in slimsgate.xml files
+
+</summary>
+
+    * Examples of common ways to use [Thymeleaf](https://www.thymeleaf.org/doc/tutorials/3.1/usingthymeleaf.html) in slimsgate.xml files
      * Creating >1 slimsgate flows based on the plugin's configuration
      * Conditionally adding/removing XML elements based on inputs or configuration
        * For example, conditionally hiding a step, conditionally excluding certain fields
+
+</details>
+
+<details>
+<summary>
+
 5. [ui-only-actions-as-code](plugins/ui-only-actions-as-code)
-   * Examples of how you can utilize services from `PublicApi` to perform actions available in the UI that do more than just
+
+</summary>
+
+    * Examples of how you can utilize services from `PublicApi` to perform actions available in the UI that do more than just
         a simple CRUD action on the Database
    * Versioning records
    * Enrolling contents in biobanking Studies
@@ -79,7 +122,7 @@ Under the [cookbook/plugins](plugins) folder you will find several sub-folders, 
    * Acknowledging Rule evaluations
    * Automating or skipping E-signatures
    * Protocol Run & Workflow actions
-     * Starting a run, 
+     * Starting a run
      * Popping contents from a queue into a run
      * Finishing steps
      * Completing/closing the run
@@ -88,3 +131,5 @@ Under the [cookbook/plugins](plugins) folder you will find several sub-folders, 
    * Generating a report from a report template
    * Generating Excels, XML, TXT, and CSV files from Grid templates and thymeleaf
    * Importing a SLIMS-formatted excel import file via a plugin
+
+</details>
