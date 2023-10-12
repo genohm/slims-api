@@ -1,6 +1,4 @@
----
-plugin-name: "basic-crud-actions"
----
+# plugin-name: "basic-crud-actions"
 
 # General Introduction
 This plugin creates several flows intended to serve as examples for basic database interactions utilizing the SLIMSGate api.
