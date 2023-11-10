@@ -74,3 +74,5 @@ You can upload and deploy your plugin with:
 ## Example templates
 
 Visit [templates](templates/) to look for empty example plugins.
+
+## Test
