@@ -1,0 +1,19 @@
+<!--
+  ~ Copyright 2021 Agilent Technologies Inc.
+  -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+		http://camel.apache.org/schema/spring 
+		http://camel.apache.org/schema/spring/camel-spring.xsd">
+
+	<!-- =========== GENERIC ROUTES ================ -->
+
+	<camelContext id="camel-context" xmlns="http://camel.apache.org/schema/spring">
+		<routeBuilder ref="basicCrudActionsBuilder"/>
+	</camelContext>
+
+</beans>

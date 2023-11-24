@@ -47,7 +47,20 @@ Build the projects for your favorite IDE (Eclipse or IntelliJ) with:
 
 Now the plugin projects can be imported in your IDE.
 Repeat this command for every new plugin project or dependency change.
-Newly defined plugin projects should also be included in [settings.gradle](settings.gradle).
+Newly defined plugin projects should also be included in [settings.gradle](settings.gradle):
+
+```
+// Included by default
+include 'templates:slimsgate-template'
+include 'templates:slims-vaadin-template'
+include 'templates:library-template'
+include 'templates:dto-template'
+
+// An example of adding a plugin of your own, stored in slims-api/personal-plugins/plugin-one
+include 'personal-plugins:plugin-one'
+```
+
+This will tell gradle to build them into modules and download their dependencies when you run `./gradlew idea` or `./gradlew eclipse`
 
 ### Usage
 
@@ -74,3 +87,5 @@ You can upload and deploy your plugin with:
 ## Example templates
 
 Visit [templates](templates/) to look for empty example plugins.
+
+Visit [cookbook](cookbook/) to find code examples and example plugins for working with SLIMS
