@@ -23,7 +23,7 @@ and run the `./gradlew idea` or `./gradlew eclipse` command successfully**
 and the [top-level readme](../README.md) in this repo**
 
 This cookbook is intended to provide you with a series of example plugins and code samples for developing SLIMS plugins 
-utilizing the slimsgate api. It is not intended to replace the slims development manual, [Apache's camel documentation](https://camel.apache.org/components/4.0.x), 
+utilizing the slimsgate api. It is not intended to replace the slims development manual, [Apache's camel documentation](https://camel.apache.org/components/3.14.x/index.html), 
 or [Thymeleaf's documentation](https://www.thymeleaf.org/doc/tutorials/3.1/usingthymeleaf.html). Rather, this is a 
 supplementary set of salient examples to demonstrate how these tools can join together and interact when creating your own Slimsgate plugins.
 
@@ -61,10 +61,10 @@ Under the [cookbook/plugins](plugins) folder you will find several sub-folders, 
 
    * Examples to illustrate commonly-utilized camel route designs and camel route endpoints other than "direct" routes that run some beans
    * Concepts explored:
-     * [Netty](https://camel.apache.org/components/4.0.x/netty-component.html) (TCP connection plumbing, handled by camel)
-     * [Quartz](https://camel.apache.org/components/4.0.x/quartz-component.html) (Timers, schedules)
-     * [SMTP](https://camel.apache.org/components/4.0.x/mail-component.html) (Sending emails and monitoring inboxes)
-     * [File](https://camel.apache.org/components/4.0.x/file-component.html) (Writing files, watching directories)
+     * [Netty](https://camel.apache.org/components/3.14.x/netty-component.html) (TCP connection plumbing, handled by camel)
+     * [Quartz](https://camel.apache.org/components/3.14.x/quartz-component.html) (Timers, schedules)
+     * [SMTP](https://camel.apache.org/components/3.14.x/mail-component.html) (Sending emails and monitoring inboxes)
+     * [File](https://camel.apache.org/components/3.14.x/file-component.html) (Writing files, watching directories)
      * Using `SlimsGateFlowService` to start other routes
        * Creates a record and logs in the User Interface of SLIMS even if a route is not started by a SLIMS action
      * How `SlimsProxy` and `SlimsFlowInitParam` vary, depending on how the route was started
