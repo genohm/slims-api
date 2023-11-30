@@ -55,6 +55,7 @@ include 'templates:slimsgate-template'
 include 'templates:slims-vaadin-template'
 include 'templates:library-template'
 include 'templates:dto-template'
+include 'cookbook:plugins:direct-database-actions:basic-crud-actions'
 
 // An example of adding a plugin of your own, stored in slims-api/personal-plugins/plugin-one
 include 'personal-plugins:plugin-one'
