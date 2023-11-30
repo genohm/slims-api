@@ -13,6 +13,9 @@
 	<!-- =========== GENERIC ROUTES ================ -->
 
 	<camelContext id="camel-context" xmlns="http://camel.apache.org/schema/spring">
+		<!-- Here, you'll put the name of the RouteBuilder class you defined, camel-case. -->
+		<!-- It is technically possible to build your routes here in this XML instead of using a RouteBuilder, but we
+		strongly suggest using the RouteBuilder class -->
 		<routeBuilder ref="sayHelloBuilder"/>
 	</camelContext>
 
