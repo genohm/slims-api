@@ -36,7 +36,7 @@
   * [Deleting Content](basic-crud-actions/src/main/java/com/genohm/slims/custom/beans/DeleteSomeContent.java#L113)
   * [Updating Content](basic-crud-actions/src/main/java/com/genohm/slims/custom/beans/UpdateSomeContent.java#L71)
 * Converting Display Values to PK's in Foreign key fields with [ConvertRecordsService](basic-crud-actions/src/main/java/com/genohm/slims/custom/beans/CreateAContent.java#L60)
-  * **Please check out the [note in the readme regarding ConvertRecordsService](basic-crud-actions/readme.md$L8) to learn more about using this tricky but handy service.**
+  * **Please check out the [note in the readme regarding ConvertRecordsService](basic-crud-actions/readme.md#L8) to learn more about using this tricky but handy service.**
 * Getting database table names with [DaoConstants](basic-crud-actions/src/main/java/com/genohm/slims/custom/beans/CreateAContent.java#L60)
 * Fetching Maps<> that include custom fields
   * [ContentRecordQueries](basic-crud-actions/src/main/java/com/genohm/slims/custom/beans/FetchSomeContent.java#L87) 
