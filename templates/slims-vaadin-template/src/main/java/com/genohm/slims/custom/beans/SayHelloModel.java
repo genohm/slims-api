@@ -4,21 +4,21 @@
 
 package com.genohm.slims.custom.beans;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
 import com.genohm.slims.custom.CustomConfiguration;
-import com.vaadin.spring.annotation.SpringComponent;
-import com.vaadin.spring.annotation.UIScope;
+import com.vaadin.flow.spring.annotation.SpringComponent;
+import com.vaadin.flow.spring.annotation.UIScope;
 
 @UIScope
 @SpringComponent
 public class SayHelloModel {
 
-	@Autowired
-	private SayHelloDataProvider dataProvider;
+	private final SayHelloDataProvider dataProvider;
+	private final CustomConfiguration customConfiguration;
 
-	@Autowired
-	private CustomConfiguration customConfiguration;
+	public SayHelloModel(SayHelloDataProvider dataProvider, CustomConfiguration customConfiguration) {
+		this.dataProvider = dataProvider;
+		this.customConfiguration = customConfiguration;
+	}
 
 	public String getInitialData() {
 		return String.format("Hello from the SLIMS Vaadin template plugin, this is my configuration: parameterOne: %s, parameterTwo: %s",

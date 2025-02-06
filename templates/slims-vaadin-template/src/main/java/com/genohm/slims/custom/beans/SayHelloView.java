@@ -7,24 +7,24 @@ package com.genohm.slims.custom.beans;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import com.vaadin.spring.annotation.SpringComponent;
-import com.vaadin.spring.annotation.UIScope;
-import com.vaadin.ui.Button;
-import com.vaadin.ui.Component;
-import com.vaadin.ui.HorizontalLayout;
-import com.vaadin.ui.Label;
-import com.vaadin.ui.Layout;
-import com.vaadin.ui.TextArea;
-import com.vaadin.ui.VerticalLayout;
+import com.vaadin.flow.component.Component;
+import com.vaadin.flow.component.Unit;
+import com.vaadin.flow.component.button.Button;
+import com.vaadin.flow.component.html.NativeLabel;
+import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
+import com.vaadin.flow.component.orderedlayout.VerticalLayout;
+import com.vaadin.flow.component.textfield.TextArea;
+import com.vaadin.flow.spring.annotation.SpringComponent;
+import com.vaadin.flow.spring.annotation.UIScope;
 
 @UIScope
 @SpringComponent
 public class SayHelloView {
 
-	private Layout leftSide = new VerticalLayout();
-	private Layout rightSide = new VerticalLayout();
-	private HorizontalLayout layout = new HorizontalLayout(leftSide, rightSide);
-	private TextArea textArea = new TextArea();
+	private final VerticalLayout leftSide = new VerticalLayout();
+	private final VerticalLayout rightSide = new VerticalLayout();
+	private final HorizontalLayout layout = new HorizontalLayout(leftSide, rightSide);
+	private final TextArea textArea = new TextArea();
 
 	private final Button actionButton;
 	private final Button closeButton;
@@ -33,17 +33,17 @@ public class SayHelloView {
 
 	public SayHelloView() {
 		actionButton = new Button("Click me");
-		leftSide.addComponent(actionButton);
+		leftSide.add(actionButton);
 		closeButton = new Button("Close");
-		leftSide.addComponent(closeButton);
+		leftSide.add(closeButton);
 
-		textArea.setRows(20);
+		textArea.setMaxHeight(40.0f, Unit.EX);
 
-		rightSide.addComponent(new Label("Feedback"));
-		rightSide.addComponent(textArea);
+		rightSide.add(new NativeLabel("Feedback"));
+		rightSide.add(textArea);
 
-		layout.setExpandRatio(leftSide, 1);
-		layout.setExpandRatio(rightSide, 3);
+		layout.setFlexGrow(1.0d, leftSide);
+		layout.setFlexGrow(3.0d, rightSide);
 
 		layout.setSizeFull();
 		textArea.setSizeFull();
