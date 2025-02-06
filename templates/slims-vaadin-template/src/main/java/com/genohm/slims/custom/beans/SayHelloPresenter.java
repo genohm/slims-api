@@ -4,33 +4,36 @@
 
 package com.genohm.slims.custom.beans;
 
-import javax.annotation.PostConstruct;
-
 import org.slf4j.Logger;
-import org.springframework.beans.factory.annotation.Autowired;
 
 import com.genohm.slims.custom.api.SlimsLogger;
 import com.genohm.slims.custom.api.WindowController;
 import com.genohm.slims.server.dao.common.ActiveUser;
-import com.vaadin.spring.annotation.SpringComponent;
-import com.vaadin.spring.annotation.UIScope;
-import com.vaadin.ui.Component;
+import com.vaadin.flow.component.Component;
+import com.vaadin.flow.spring.annotation.SpringComponent;
+import com.vaadin.flow.spring.annotation.UIScope;
+
+import jakarta.annotation.PostConstruct;
 
 @UIScope
 @SpringComponent
 public class SayHelloPresenter {
 
-	@Autowired
-	private SayHelloView view;
-	@Autowired
-	private SayHelloModel model;
-
-	@Autowired
-	private WindowController windowController;
+	private final SayHelloView view;
+	private final SayHelloModel model;
+	private final WindowController windowController;
 
 	private String windowId;
 
 	private static final Logger LOG = SlimsLogger.getLogger(SayHelloPresenter.class);
+
+	public SayHelloPresenter(SayHelloView view,
+	                         SayHelloModel model,
+	                         WindowController windowController) {
+		this.view = view;
+		this.model = model;
+		this.windowController = windowController;
+	}
 
 	@PostConstruct
 	public void postConstruct() {
