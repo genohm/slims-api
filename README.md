@@ -1,6 +1,6 @@
 # SLIMS-API
 
-![build_test workflow](https://github.com/genohm/slims-api/actions/workflows/main.yml/badge.svg?branch=master)
+![build_test workflow](https://github.com/genohm/slims-api/actions/workflows/main.yml/badge.svg?branch=7.2&event=push)
 
 The SLIMS API allows you to write SLIMSGATE plugins and SLIMS Vaadin plugins. 
 
