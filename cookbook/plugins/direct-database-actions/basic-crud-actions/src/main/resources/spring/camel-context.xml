@@ -17,7 +17,7 @@
 		 because we are referring to an instance of our Builder class, rather than the Builder class itself. -->
 		<!-- It is technically possible to build your routes here in this XML instead of using a RouteBuilder, but we
 		strongly suggest using the RouteBuilder class -->
-		<routeBuilder ref="sayHelloBuilder"/>
+		<routeBuilder ref="basicCrudActionsBuilder"/>
 	</camelContext>
 
 </beans>
