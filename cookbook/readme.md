@@ -32,19 +32,19 @@ supplementary set of salient examples to demonstrate how these tools can join to
 In particular, we want to highlight how you can utilize the services provided in the `PublicApi` class. This class can be found
 in your External Libraries in a directory like `/slimsservice-api-A.B.C/com/genohm/slims/server/service/PublicApi.class`. 
 
-The `A` `B` and `C` in `slimsservice-api-A.B.C` will be a number like `6.9.0`. You might have more than one of these folders:
+The `A` `B` and `C` in `slimsservice-api-A.B.C` will be a number like `7.2.0`. You might have more than one of these folders:
 one is created for each version of SLIMS you have amongst your plugins' `apiVersion` values. For example, if you run `./gradlew idea` or `./gradlew eclipse`
 after creating a plugin that has the following `plugin.properties` file:
 
 ```
 config-class=com.genohm.slims.custom.CustomConfiguration
 type=SLIMSGATE
-apiVersion=6.8.0
+apiVersion=7.2.0
 ```
 
-An external Library `slimsservice-api-6.8.0.jar` will be downloaded, and the contained version of `PublicApi.java` will
-be the one that the plugin utilizes. If you later change the version to 6.9.1 and run `./gradlew idea`, you will download a new 
-external library: `slimsservice-api-6.9.1.jar`.
+An external Library `slimsservice-api-7.2.0.jar` will be downloaded, and the contained version of `PublicApi.java` will
+be the one that the plugin utilizes. If you later change the version to 7.3.1 and run `./gradlew idea`, you will download a new 
+external library: `slimsservice-api-7.3.1.jar`.
 
 
 ## What's inside?
