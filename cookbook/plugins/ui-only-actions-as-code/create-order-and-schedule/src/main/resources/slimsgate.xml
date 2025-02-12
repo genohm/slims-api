@@ -1,0 +1,47 @@
+<!--
+  ~ Copyright 2021 Agilent Technologies Inc.
+  -->
+
+<slimsgate>
+	<slimsgate-flow>
+		<id>create-order-and-schedule</id>
+		<name>Create order and schedule to workflow</name>
+		<usage>contentmanagement</usage>
+		<step>
+			<name>Create order</name>
+			<hidden>true</hidden>
+			<input>
+				<parameter>
+					<label>SLIMS_SELECT_SAMPLES</label>
+					<name>SLIMS_SELECT_SAMPLES</name>
+					<type>StringArray</type>
+					<required>true</required>
+				</parameter>
+			</input>
+			<process>
+				<route>create-order-and-schedule</route>
+			</process>
+			<output>
+				<parameter>
+					<name>executionFeedback</name>
+					<type>ValueMap</type>
+				</parameter>
+			</output>
+		</step>
+		<step>
+			<name>Feedback</name>
+			<input>
+				<parameter>
+					<label>Plugin results</label>
+					<name>results</name>
+					<type>Feedback</type>
+					<width>500</width>
+					<referencedDefaultValue>executionFeedback</referencedDefaultValue>
+				</parameter>
+			</input>
+			<process>
+				<route>slimsgate-dummy-route</route>
+			</process>
+		</step>
+	</slimsgate-flow>
+</slimsgate>

@@ -1,0 +1,23 @@
+<!--
+  ~ Copyright 2021 Agilent Technologies Inc.
+  -->
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+		http://camel.apache.org/schema/spring 
+		http://camel.apache.org/schema/spring/camel-spring.xsd">
+
+	<!-- =========== GENERIC ROUTES ================ -->
+
+	<camelContext id="camel-context" xmlns="http://camel.apache.org/schema/spring">
+		<!-- Here, you'll put the name of the RouteBuilder class you defined, camel-case. The first letter is lower-cased
+		 because we are referring to an instance of our Builder class, rather than the Builder class itself. -->
+		<!-- It is technically possible to build your routes here in this XML instead of using a RouteBuilder, but we
+		strongly suggest using the RouteBuilder class -->
+		<routeBuilder ref="createOrderAndScheduleBuilder"/>
+	</camelContext>
+
+</beans>

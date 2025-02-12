@@ -49,8 +49,10 @@ external library: `slimsservice-api-6.9.1.jar`.
 
 ## What's inside?
 
-Under the [cookbook/plugins](plugins) folder you will find several sub-folders, broken into categories:
+Under the [cookbook](cookbook) folder you will find two main sub-folders that will contain entire plugins ([cookbook/plugins](plugins)) or simple code snippets ([cookbook/code-snippets](code-snippets)).
 
+### Plugins
+You will find several sub-folders with entire plugins, broken into categories:
 <details>
 
 <summary>
@@ -152,4 +154,14 @@ Under the [cookbook/plugins](plugins) folder you will find several sub-folders, 
    * Generating Excels, XML, TXT, and CSV files from Grid templates and thymeleaf
    * Importing a SLIMS-formatted excel import file via a plugin
 
+</details>
+
+### Code snippets
+
+<details>
+<summary>
+
+#### [UserService snippets](code-snippets/userService.md)
+
+</summary>
 </details>
