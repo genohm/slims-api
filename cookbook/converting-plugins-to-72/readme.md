@@ -10,6 +10,8 @@ The recipe is a tool to help, there is no expectation that no manual changes are
 
 # How to run the recipe
 
+Make sure your JAVA_HOME is set to Java 21.
+
 Keep all your plugins with an apiVersion on 6.9, your code needs to be able to compile on 6.9 for the recipe to run.
 
 In your build.gradle do the following changes
