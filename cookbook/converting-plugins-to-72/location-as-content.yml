@@ -1,0 +1,1002 @@
+type: specs.openrewrite.org/v1beta/recipe
+name: com.agilent.LocationAsContent
+displayName: Upgrade to 7.0
+recipeList:
+  - org.openrewrite.java.spring.boot3.UpgradeSpringBoot_3_0
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.server.repository.queriers.LocationQueries findByBarcode(java.lang.String)
+      newMethodName: findByBarCode 
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      literalValue: lctn_left
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentMeta.LEFT
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      literalValue: lctn_modifiedBy
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentMeta.MODIFIED_BY
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      literalValue: lctn_name
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentMeta.ID
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      literalValue: lctn_fk_locationType
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentMeta.FK_CONTENT_TYPE
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      literalValue: lctn_modifiedOn
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentMeta.MODIFIED_ON
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      literalValue: lctn_rows
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentMeta.ROWS
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      literalValue: lctn_right
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentMeta.RIGHT
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      literalValue: lctn_barCode
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentMeta.BAR_CODE
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      literalValue: lctn_fk_parent
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentMeta.FK_LOCATION
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      literalValue: lctn_shortName
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentMeta.SHORT_ID
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      literalValue: lctn_createdBy
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentMeta.CREATED_BY
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      literalValue: lctn_fk_group
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentMeta.FK_GROUP
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      literalValue: lctn_createdOn
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentMeta.CREATED_ON
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      literalValue: lctn_pk
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentMeta.PK
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      literalValue: lctn_columns
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentMeta.COLUMNS
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      literalValue: lctn_fk_user
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentMeta.FK_USER
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      literalValue: lctn_position_column
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentMeta.POSITION_COLUMN
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      literalValue: lctn_position_row
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentMeta.POSITION_ROW
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.Location getLctn_left()
+      newMethodName: getCntn_left
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.Location getLctn_modifiedBy()
+      newMethodName: getCntn_modifiedBy
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.Location getLctn_name()
+      newMethodName: getCntn_id
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.Location getLctn_fk_locationType()
+      newMethodName: getCntn_fk_contentType
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.Location getLctn_modifiedOn()
+      newMethodName: getCntn_modifiedOn
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.Location getLctn_rows()
+      newMethodName: getCntn_rows
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.Location getLctn_right()
+      newMethodName: getCntn_right
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.Location getLctn_barCode()
+      newMethodName: getCntn_barCode
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.Location getLctn_fk_parent()
+      newMethodName: getCntn_fk_location
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.Location getLctn_shortName()
+      newMethodName: getCntn_shortId
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.Location getLctn_createdBy()
+      newMethodName: getCntn_createdBy
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.Location getLctn_fk_group()
+      newMethodName: getCntn_fk_group
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.Location getLctn_createdOn()
+      newMethodName: getCntn_createdOn
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.Location getLctn_pk()
+      newMethodName: getCntn_pk
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.Location getLctn_columns()
+      newMethodName: getCntn_columns
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.Location getLctn_fk_user()
+      newMethodName: getCntn_fk_user
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.Location getLctn_position_column()
+      newMethodName: getCntn_position_column
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.Location getLctn_position_row()
+      newMethodName: getCntn_position_row
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.Location setLctn_left(java.lang.Long)
+      newMethodName: setCntn_left
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.Location setLctn_modifiedBy(java.lang.String)
+      newMethodName: setCntn_modifiedBy
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.Location setLctn_name(java.lang.String)
+      newMethodName: setCntn_id
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.Location setLctn_fk_locationType(java.lang.Long)
+      newMethodName: setCntn_fk_contentType
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.Location setLctn_modifiedOn(java.util.Date)
+      newMethodName: setCntn_modifiedOn
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.Location setLctn_rows(java.lang.Integer)
+      newMethodName: setCntn_rows
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.Location setLctn_right(java.lang.Long)
+      newMethodName: setCntn_right
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.Location setLctn_barCode(java.lang.String)
+      newMethodName: setCntn_barCode
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.Location setLctn_fk_parent(java.lang.Long)
+      newMethodName: setCntn_fk_location
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.Location setLctn_shortName(shortId)
+      newMethodName: setCntn_shortId
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.Location setLctn_createdBy(java.lang.String)
+      newMethodName: setCntn_createdBy
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.Location setLctn_fk_group(java.lang.Long)
+      newMethodName: setCntn_fk_group
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.Location setLctn_createdOn(java.util.Date)
+      newMethodName: setCntn_createdOn
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.Location setLctn_pk(java.lang.Long)
+      newMethodName: setCntn_pk
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.Location setLctn_columns(java.lang.Integer)
+      newMethodName: setCntn_columns
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.Location setLctn_fk_user(java.lang.Long)
+      newMethodName: setCntn_fk_user
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.Location setLctn_position_column(java.lang.Integer)
+      newMethodName: setCntn_position_column
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.Location setLctn_position_row(java.lang.Integer)
+      newMethodName: setCntn_position_row
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: com.genohm.slims.common.model.LocationMeta.LEFT
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentMeta.LEFT
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: com.genohm.slims.common.model.LocationMeta.MODIFIED_BY
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentMeta.MODIFIED_BY
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: com.genohm.slims.common.model.LocationMeta.NAME
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentMeta.ID
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: com.genohm.slims.common.model.LocationMeta.FK_LOCATION_TYPE
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentMeta.FK_CONTENT_TYPE
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: com.genohm.slims.common.model.LocationMeta.MODIFIED_ON
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentMeta.MODIFIED_ON
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: com.genohm.slims.common.model.LocationMeta.ROWS
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentMeta.ROWS
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: com.genohm.slims.common.model.LocationMeta.RIGHT
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentMeta.RIGHT
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: com.genohm.slims.common.model.LocationMeta.BAR_CODE
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentMeta.BAR_CODE
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: com.genohm.slims.common.model.LocationMeta.FK_PARENT
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentMeta.FK_LOCATION
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: com.genohm.slims.common.model.LocationMeta.SHORT_NAME
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentMeta.SHORT_ID
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: com.genohm.slims.common.model.LocationMeta.CREATED_BY
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentMeta.CREATED_BY
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: com.genohm.slims.common.model.LocationMeta.FK_GROUP
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentMeta.FK_GROUP
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: com.genohm.slims.common.model.LocationMeta.CREATED_ON
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentMeta.CREATED_ON
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: com.genohm.slims.common.model.LocationMeta.PK
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentMeta.PK
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: com.genohm.slims.common.model.LocationMeta.COLUMNS
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentMeta.COLUMNS
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: com.genohm.slims.common.model.LocationMeta.FK_USER
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentMeta.FK_USER
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: com.genohm.slims.common.model.LocationMeta.POSITION_COLUMN
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentMeta.POSITION_COLUMN
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: com.genohm.slims.common.model.LocationMeta.POSITION_ROW
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentMeta.POSITION_ROW
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      literalValue: lctp_defaultColumns
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentTypeMeta.DEFAULT_COLUMNS
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      literalValue: lctp_createdOn
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentTypeMeta.CREATED_ON
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      literalValue: lctp_useBarcodeAsName
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentTypeMeta.USE_BARCODE_AS_NAME
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      literalValue: lctp_fk_defaultSublocationType
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentTypeMeta.FK_DEFAULT_CONTAINED_TYPE
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      literalValue: lctp_uniqueIdentifier
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentTypeMeta.UNIQUE_IDENTIFIER
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      literalValue: lctp_barcodeMask
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentTypeMeta.BARCODE_MASK
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      literalValue: lctp_rowsAlphabetic
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentTypeMeta.ROWS_ALPHABETIC
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      literalValue: lctp_modifiedOn
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentTypeMeta.MODIFIED_ON
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      literalValue: lctp_createdBy
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentTypeMeta.CREATED_BY
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      literalValue: lctp_description
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentTypeMeta.DESCRIPTION
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      literalValue: lctp_active
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentTypeMeta.ACTIVE
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      literalValue: lctp_nameMask
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentTypeMeta.ID_MASK
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      literalValue: lctp_positionLess
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentTypeMeta.POSITION_LESS
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      literalValue: lctp_shortNameMask
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentTypeMeta.SHORT_ID_MASK
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      literalValue: lctp_slimsGeneratesBarcode
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentTypeMeta.SLIMS_GENERATES_BARCODE
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      literalValue: lctp_defaultRows
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentTypeMeta.DEFAULT_ROWS
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      literalValue: lctp_modifiedBy
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentTypeMeta.MODIFIED_BY
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      literalValue: lctp_columnsAlphabetic
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentTypeMeta.COLUMNS_ALPHABETIC
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      literalValue: lctp_name
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentTypeMeta.NAME
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      literalValue: lctp_icon
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentTypeMeta.ICON
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      literalValue: lctp_pk
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentTypeMeta.PK
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.LocationType getLctp_defaultColumns()
+      newMethodName: getCntp_defaultColumns
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.LocationType getLctp_createdOn()
+      newMethodName: getCntp_createdOn
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.LocationType getLctp_useBarcodeAsName()
+      newMethodName: getCntp_useBarcodeAsName
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.LocationType getLctp_fk_defaultSublocationType()
+      newMethodName: getCntp_fk_defaultContainedType
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.LocationType getLctp_uniqueIdentifier()
+      newMethodName: getCntp_uniqueIdentifier
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.LocationType getLctp_barcodeMask()
+      newMethodName: getCntp_barcodeMask
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.LocationType getLctp_rowsAlphabetic()
+      newMethodName: getCntp_rowsAlphabetic
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.LocationType getLctp_modifiedOn()
+      newMethodName: getCntp_modifiedOn
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.LocationType getLctp_createdBy()
+      newMethodName: getCntp_createdBy
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.LocationType getLctp_description()
+      newMethodName: getCntp_description
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.LocationType getLctp_active()
+      newMethodName: getCntp_active
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.LocationType getLctp_nameMask()
+      newMethodName: getCntp_idMask
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.LocationType getLctp_positionLess()
+      newMethodName: getCntp_positionLess
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.LocationType getLctp_shortNameMask()
+      newMethodName: getCntp_shortIdMask
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.LocationType getLctp_slimsGeneratesBarcode()
+      newMethodName: getCntp_slimsGeneratesBarcode
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.LocationType getLctp_defaultRows()
+      newMethodName: getCntp_defaultRows
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.LocationType getLctp_modifiedBy()
+      newMethodName: getCntp_modifiedBy
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.LocationType getLctp_columnsAlphabetic()
+      newMethodName: getCntp_columnsAlphabetic
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.LocationType getLctp_name()
+      newMethodName: getCntp_name
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.LocationType getLctp_icon()
+      newMethodName: getCntp_icon
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.LocationType getLctp_pk()
+      newMethodName: getCntp_pk
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.LocationType setLctp_defaultColumns(java.lang.Integer)
+      newMethodName: setCntp_defaultColumns
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.LocationType setLctp_createdOn(java.util.Date)
+      newMethodName: setCntp_createdOn
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.LocationType setLctp_useBarcodeAsName(java.lang.Boolean)
+      newMethodName: setCntp_useBarcodeAsName
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.LocationType setLctp_fk_defaultSublocationType(java.lang.Long)
+      newMethodName: setCntp_fk_defaultContainedType
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.LocationType setLctp_uniqueIdentifier(null)
+      newMethodName: setCntp_uniqueIdentifier
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.LocationType setLctp_barcodeMask(java.lang.String)
+      newMethodName: setCntp_barcodeMask
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.LocationType setLctp_rowsAlphabetic(java.lang.Boolean)
+      newMethodName: setCntp_rowsAlphabetic
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.LocationType setLctp_modifiedOn(java.util.Date)
+      newMethodName: setCntp_modifiedOn
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.LocationType setLctp_createdBy(java.lang.String)
+      newMethodName: setCntp_createdBy
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.LocationType setLctp_description(java.lang.String)
+      newMethodName: setCntp_description
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.LocationType setLctp_active(java.lang.Boolean)
+      newMethodName: setCntp_active
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.LocationType setLctp_nameMask(java.lang.String)
+      newMethodName: setCntp_idMask
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.LocationType setLctp_positionLess(java.lang.Boolean)
+      newMethodName: setCntp_positionLess
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.LocationType setLctp_shortNameMask(java.lang.String)
+      newMethodName: setCntp_shortIdMask
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.LocationType setLctp_slimsGeneratesBarcode(java.lang.Boolean)
+      newMethodName: setCntp_slimsGeneratesBarcode
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.LocationType setLctp_defaultRows(java.lang.Integer)
+      newMethodName: setCntp_defaultRows
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.LocationType setLctp_modifiedBy(java.lang.String)
+      newMethodName: setCntp_modifiedBy
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.LocationType setLctp_columnsAlphabetic(java.lang.Boolean)
+      newMethodName: setCntp_columnsAlphabetic
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.LocationType setLctp_name(java.lang.String)
+      newMethodName: setCntp_name
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.LocationType setLctp_icon(java.lang.String)
+      newMethodName: setCntp_icon
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.LocationType setLctp_pk(java.lang.Long)
+      newMethodName: setCntp_pk
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: com.genohm.slims.common.model.LocationTypeMeta.DEFAULT_COLUMNS
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentTypeMeta.DEFAULT_COLUMNS
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: com.genohm.slims.common.model.LocationTypeMeta.CREATED_ON
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentTypeMeta.CREATED_ON
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: com.genohm.slims.common.model.LocationTypeMeta.USE_BARCODE_AS_NAME
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentTypeMeta.USE_BARCODE_AS_NAME
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: com.genohm.slims.common.model.LocationTypeMeta.FK_DEFAULT_SUBLOCATION_TYPE
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentTypeMeta.FK_DEFAULT_CONTAINED_TYPE
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: com.genohm.slims.common.model.LocationTypeMeta.UNIQUE_IDENTIFIER
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentTypeMeta.UNIQUE_IDENTIFIER
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: com.genohm.slims.common.model.LocationTypeMeta.BARCODE_MASK
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentTypeMeta.BARCODE_MASK
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: com.genohm.slims.common.model.LocationTypeMeta.ROWS_ALPHABETIC
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentTypeMeta.ROWS_ALPHABETIC
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: com.genohm.slims.common.model.LocationTypeMeta.MODIFIED_ON
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentTypeMeta.MODIFIED_ON
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: com.genohm.slims.common.model.LocationTypeMeta.CREATED_BY
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentTypeMeta.CREATED_BY
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: com.genohm.slims.common.model.LocationTypeMeta.DESCRIPTION
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentTypeMeta.DESCRIPTION
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: com.genohm.slims.common.model.LocationTypeMeta.ACTIVE
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentTypeMeta.ACTIVE
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: com.genohm.slims.common.model.LocationTypeMeta.NAME_MASK
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentTypeMeta.ID_MASK
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: com.genohm.slims.common.model.LocationTypeMeta.POSITION_LESS
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentTypeMeta.POSITION_LESS
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: com.genohm.slims.common.model.LocationTypeMeta.SHORT_NAME_MASK
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentTypeMeta.SHORT_ID_MASK
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: com.genohm.slims.common.model.LocationTypeMeta.SLIMS_GENERATES_BARCODE
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentTypeMeta.SLIMS_GENERATES_BARCODE
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: com.genohm.slims.common.model.LocationTypeMeta.DEFAULT_ROWS
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentTypeMeta.DEFAULT_ROWS
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: com.genohm.slims.common.model.LocationTypeMeta.MODIFIED_BY
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentTypeMeta.MODIFIED_BY
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: com.genohm.slims.common.model.LocationTypeMeta.COLUMNS_ALPHABETIC
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentTypeMeta.COLUMNS_ALPHABETIC
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: com.genohm.slims.common.model.LocationTypeMeta.NAME
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentTypeMeta.NAME
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: com.genohm.slims.common.model.LocationTypeMeta.ICON
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentTypeMeta.ICON
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: com.genohm.slims.common.model.LocationTypeMeta.PK
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentTypeMeta.PK
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      literalValue: nstr_fk_user
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentMeta.FK_USER
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      literalValue: nstr_modifiedBy
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentMeta.MODIFIED_BY
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      literalValue: nstr_modifiedOn
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentMeta.MODIFIED_ON
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      literalValue: nstr_fk_location
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentMeta.FK_LOCATION
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      literalValue: nstr_uniqueIdentifier
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentMeta.BAR_CODE
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      literalValue: nstr_createdBy
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentMeta.CREATED_BY
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      literalValue: nstr_pk
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentMeta.PK
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      literalValue: nstr_createdOn
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentMeta.CREATED_ON
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      literalValue: nstr_fk_group
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentMeta.FK_GROUP
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      literalValue: nstr_name
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentMeta.ID
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      literalValue: nstr_fk_instrumentType
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentMeta.FK_CONTENT_TYPE
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.Instrument getNstr_fk_user()
+      newMethodName: getCntn_fk_user
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.Instrument getNstr_modifiedBy()
+      newMethodName: getCntn_modifiedBy
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.Instrument getNstr_modifiedOn()
+      newMethodName: getCntn_modifiedOn
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.Instrument getNstr_fk_location()
+      newMethodName: getCntn_fk_location
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.Instrument getNstr_uniqueIdentifier()
+      newMethodName: getCntn_barCode
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.Instrument getNstr_createdBy()
+      newMethodName: getCntn_createdBy
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.Instrument getNstr_pk()
+      newMethodName: getCntn_pk
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.Instrument getNstr_createdOn()
+      newMethodName: getCntn_createdOn
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.Instrument getNstr_fk_group()
+      newMethodName: getCntn_fk_group
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.Instrument getNstr_name()
+      newMethodName: getCntn_id
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.Instrument getNstr_fk_instrumentType()
+      newMethodName: getCntn_fk_contentType
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.Instrument setNstr_fk_user(java.lang.Long)
+      newMethodName: setCntn_fk_user
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.Instrument setNstr_modifiedBy(java.lang.String)
+      newMethodName: setCntn_modifiedBy
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.Instrument setNstr_modifiedOn(java.util.Date)
+      newMethodName: setCntn_modifiedOn
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.Instrument setNstr_fk_location(java.lang.Long)
+      newMethodName: setCntn_fk_location
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.Instrument setNstr_uniqueIdentifier(java.lang.String)
+      newMethodName: setCntn_barCode
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.Instrument setNstr_createdBy(java.lang.String)
+      newMethodName: setCntn_createdBy
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.Instrument setNstr_pk(java.lang.Long)
+      newMethodName: setCntn_pk
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.Instrument setNstr_createdOn(java.util.Date)
+      newMethodName: setCntn_createdOn
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.Instrument setNstr_fk_group(java.lang.Long)
+      newMethodName: setCntn_fk_group
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.Instrument setNstr_name(java.lang.String)
+      newMethodName: setCntn_id
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.Instrument setNstr_fk_instrumentType(java.lang.Long)
+      newMethodName: setCntn_fk_contentType
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: com.genohm.slims.common.model.InstrumentMeta.FK_USER
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentMeta.FK_USER
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: com.genohm.slims.common.model.InstrumentMeta.MODIFIED_BY
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentMeta.MODIFIED_BY
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: com.genohm.slims.common.model.InstrumentMeta.MODIFIED_ON
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentMeta.MODIFIED_ON
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: com.genohm.slims.common.model.InstrumentMeta.FK_LOCATION
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentMeta.FK_LOCATION
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: com.genohm.slims.common.model.InstrumentMeta.UNIQUE_IDENTIFIER
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentMeta.BAR_CODE
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: com.genohm.slims.common.model.InstrumentMeta.CREATED_BY
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentMeta.CREATED_BY
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: com.genohm.slims.common.model.InstrumentMeta.PK
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentMeta.PK
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: com.genohm.slims.common.model.InstrumentMeta.CREATED_ON
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentMeta.CREATED_ON
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: com.genohm.slims.common.model.InstrumentMeta.FK_GROUP
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentMeta.FK_GROUP
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: com.genohm.slims.common.model.InstrumentMeta.NAME
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentMeta.ID
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: com.genohm.slims.common.model.InstrumentMeta.FK_INSTRUMENT_TYPE
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentMeta.FK_CONTENT_TYPE
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      literalValue: nstp_name
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentTypeMeta.NAME
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      literalValue: nstp_modifiedOn
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentTypeMeta.MODIFIED_ON
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      literalValue: nstp_createdBy
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentTypeMeta.CREATED_BY
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      literalValue: nstp_description
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentTypeMeta.DESCRIPTION
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      literalValue: nstp_createdOn
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentTypeMeta.CREATED_ON
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      literalValue: nstp_pk
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentTypeMeta.PK
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      literalValue: nstp_uniqueIdentifier
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentTypeMeta.UNIQUE_IDENTIFIER
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      literalValue: nstp_icon
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentTypeMeta.ICON
+  - org.openrewrite.java.ReplaceStringLiteralWithConstant:
+      literalValue: nstp_modifiedBy
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentTypeMeta.MODIFIED_BY
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.InstrumentType getNstp_name()
+      newMethodName: getCntp_name
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.InstrumentType getNstp_modifiedOn()
+      newMethodName: getCntp_modifiedOn
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.InstrumentType getNstp_createdBy()
+      newMethodName: getCntp_createdBy
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.InstrumentType getNstp_description()
+      newMethodName: getCntp_description
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.InstrumentType getNstp_createdOn()
+      newMethodName: getCntp_createdOn
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.InstrumentType getNstp_pk()
+      newMethodName: getCntp_pk
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.InstrumentType getNstp_uniqueIdentifier()
+      newMethodName: getCntp_uniqueIdentifier
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.InstrumentType getNstp_icon()
+      newMethodName: getCntp_icon
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.InstrumentType getNstp_modifiedBy()
+      newMethodName: getCntp_modifiedBy
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.InstrumentType setNstp_name(java.lang.String)
+      newMethodName: setCntp_name
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.InstrumentType setNstp_modifiedOn(java.util.Date)
+      newMethodName: setCntp_modifiedOn
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.InstrumentType setNstp_createdBy(java.lang.String)
+      newMethodName: setCntp_createdBy
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.InstrumentType setNstp_description(java.lang.String)
+      newMethodName: setCntp_description
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.InstrumentType setNstp_createdOn(java.util.Date)
+      newMethodName: setCntp_createdOn
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.InstrumentType setNstp_pk(java.lang.Long)
+      newMethodName: setCntp_pk
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.InstrumentType setNstp_uniqueIdentifier(java.lang.String)
+      newMethodName: setCntp_uniqueIdentifier
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.InstrumentType setNstp_icon(java.lang.String)
+      newMethodName: setCntp_icon
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ChangeMethodName:
+      methodPattern: com.genohm.slims.common.model.InstrumentType setNstp_modifiedBy(java.lang.String)
+      newMethodName: setCntp_modifiedBy
+      matchOverrides: false
+      ignoreDefinitions: true
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: com.genohm.slims.common.model.InstrumentTypeMeta.NAME
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentTypeMeta.NAME
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: com.genohm.slims.common.model.InstrumentTypeMeta.MODIFIED_ON
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentTypeMeta.MODIFIED_ON
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: com.genohm.slims.common.model.InstrumentTypeMeta.CREATED_BY
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentTypeMeta.CREATED_BY
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: com.genohm.slims.common.model.InstrumentTypeMeta.DESCRIPTION
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentTypeMeta.DESCRIPTION
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: com.genohm.slims.common.model.InstrumentTypeMeta.CREATED_ON
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentTypeMeta.CREATED_ON
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: com.genohm.slims.common.model.InstrumentTypeMeta.PK
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentTypeMeta.PK
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: com.genohm.slims.common.model.InstrumentTypeMeta.UNIQUE_IDENTIFIER
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentTypeMeta.UNIQUE_IDENTIFIER
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: com.genohm.slims.common.model.InstrumentTypeMeta.ICON
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentTypeMeta.ICON
+  - org.openrewrite.java.ReplaceConstantWithAnotherConstant:
+      existingFullyQualifiedConstantName: com.genohm.slims.common.model.InstrumentTypeMeta.MODIFIED_BY
+      fullyQualifiedConstantName: com.genohm.slims.common.model.ContentTypeMeta.MODIFIED_BY
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: com.genohm.slims.server.repository.queriers.LocationTypeQueries
+      newFullyQualifiedTypeName: com.genohm.slims.server.repository.queriers.ContentTypeQueries
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: com.genohm.slims.common.model.LocationType
+      newFullyQualifiedTypeName: com.genohm.slims.common.model.ContentType
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: com.genohm.slims.server.repository.queriers.LocationQueries
+      newFullyQualifiedTypeName: com.genohm.slims.server.repository.queriers.ContentQueries
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: com.genohm.slims.common.model.InstrumentMeta
+      newFullyQualifiedTypeName: com.genohm.slims.common.model.ContentMeta
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: com.genohm.slims.server.repository.queriers.InstrumentRecordQueries
+      newFullyQualifiedTypeName: com.genohm.slims.server.repository.queriers.ContentRecordQueries
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: com.genohm.slims.common.model.Instrument
+      newFullyQualifiedTypeName: com.genohm.slims.common.model.Content
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: com.genohm.slims.common.model.InstrumentTypeMeta
+      newFullyQualifiedTypeName: com.genohm.slims.common.model.ContentTypeMeta
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: com.genohm.slims.server.repository.queriers.LocationTypeRecordQueries
+      newFullyQualifiedTypeName: com.genohm.slims.server.repository.queriers.ContentTypeRecordQueries
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: com.genohm.slims.common.model.InstrumentType
+      newFullyQualifiedTypeName: com.genohm.slims.common.model.ContentType
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: com.genohm.slims.server.repository.queriers.InstrumentTypeQueries
+      newFullyQualifiedTypeName: com.genohm.slims.server.repository.queriers.ContentTypeQueries
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: com.genohm.slims.server.repository.queriers.InstrumentQueries
+      newFullyQualifiedTypeName: com.genohm.slims.server.repository.queriers.ContentQueries
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: com.genohm.slims.server.repository.queriers.LocationRecordQueries
+      newFullyQualifiedTypeName: com.genohm.slims.server.repository.queriers.ContentRecordQueries
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: com.genohm.slims.common.model.LocationMeta
+      newFullyQualifiedTypeName: com.genohm.slims.common.model.ContentMeta
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: com.genohm.slims.server.repository.queriers.InstrumentTypeTypeRecordQueries
+      newFullyQualifiedTypeName: com.genohm.slims.server.repository.queriers.ContentTypeRecordQueries
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: com.genohm.slims.common.model.Location
+      newFullyQualifiedTypeName: com.genohm.slims.common.model.Content
+  - org.openrewrite.java.ChangeType:
+      oldFullyQualifiedTypeName: com.genohm.slims.common.model.LocationTypeMeta
+      newFullyQualifiedTypeName: com.genohm.slims.common.model.ContentTypeMeta
