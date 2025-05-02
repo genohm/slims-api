@@ -6,7 +6,7 @@ The SLIMS API allows you to write SLIMSGATE plugins and SLIMS Vaadin plugins.
 
 ## Prerequisites.
 
-- Java 11
+- Java 21
 
 - You will need to have an account on AGILENT's build infrastructure. 
 Please contact your SLIMS project lead to get access. 
@@ -35,7 +35,7 @@ They will send you a gradle.properties file looking like this:
 
 Once your account is setup, download this repository and navigate to the base folder of the repository with the command line interface you use. 
 We suggest using GIT Bash for Windows. 
-Make sure your JAVA_HOME is set to java 11.
+Make sure your JAVA_HOME is set to java 21.
 Build the projects for your favorite IDE (Eclipse or IntelliJ) with:
 
 ```
